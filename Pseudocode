@@ -44,9 +44,22 @@ use strict;
 	
 	#Report Results of comparison in text file format? Spreadsheet?
 	
-			
+# Reprot the results			
+use strict;
+use Bio::Graphics;
+use Bio::SeqFeature::Generic;
 
-
+# make a scale to the image
+my $full_length = Bio::SeqFeature::Generic->new(
+                                                -start => 1,
+                                                -end   => 1000,
+                                               );
+my $panel->add_track($full_length,
+                  -glyph   => 'arrow',
+                  -tick    => 2,
+                  -fgcolor => 'black',
+                  -double  => 1,
+                 );                                               
 
 
 
